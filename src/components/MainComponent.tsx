@@ -19,7 +19,7 @@ function Home() {
   console.log(`App rendered ${count} times`)
   return (
     <main className="flex items-center justify-center min-h-screen flex-col">
-      <div className="flex gap-x-2">
+      <div className="flex gap-x-4">
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           onClick={() => setCount((prev) => prev + 1)}
@@ -33,9 +33,15 @@ function Home() {
           Change color
         </button>
       </div>
-      <div className="flex gap-x-2">
-        <Swatch color={color} />
-        <MemoedSwatch color={color} />
+      <div className="flex gap-x-4 mt-4">
+        <div className="flex flex-col items-center">
+          <p>Normal component</p>
+          <Swatch color={color} />
+        </div>
+        <div className="flex flex-col items-center">
+          <p>Memoed component</p>
+          <MemoedSwatch color={color} />
+        </div>
       </div>
     </main>
   )
